@@ -1,0 +1,110 @@
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+.bkg-green-diagonal{
+    background: linear-gradient(45deg, rgb(22, 159, 133) 0%,rgb(22, 160, 134)50%,rgb(27, 186, 154) 51%,rgb(25, 187, 155) 100%);
+}
+.bkg-blue-diagonal{
+  background: linear-gradient(45deg, rgb(56, 116, 152) 0%,rgb(56, 116, 151)50%,rgb(63, 168, 242) 51%,rgb(59, 170, 241) 100%);
+}
+.bkg-yellow-diagonal{
+  background: linear-gradient(45deg, rgb(243, 156, 16) 0%,rgb(243, 154, 16)50%,rgb(240, 195, 15) 51%,rgb(241, 195, 13) 100%);
+}
+.bkg-pink-diagonal{
+  background: linear-gradient(45deg, rgb(175, 110, 118) 0%,rgb(185, 117, 129)50%,rgb(223, 144, 168) 51%,rgb(219, 141, 164) 100%);
+}
+
+.bkg-shadow-image{
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(92, 92, 92) 1px 1px 0px, rgb(92, 92, 92) 2px 2px 0px, rgb(92, 92, 92) 3px 3px 0px, rgb(92, 92, 92) 4px 4px 0px, rgb(92, 92, 92) 5px 5px 0px, rgb(92, 92, 92) 6px 6px 0px, rgb(92, 92, 92) 7px 7px 0px, rgb(92, 92, 92) 8px 8px 0px, rgb(92, 92, 92) 9px 9px 0px, rgb(92, 92, 92) 10px 10px 0px, rgb(92, 92, 92) 11px 11px 0px, rgb(92, 92, 92) 12px 12px 0px, rgb(92, 92, 92) 13px 13px 0px, rgb(92, 92, 92) 14px 14px 0px, rgb(92, 92, 92) 15px 15px 0px, rgb(92, 92, 92) 16px 16px 0px, rgb(92, 92, 92) 17px 17px 0px, rgb(92, 92, 92) 18px 18px 0px, rgb(92, 92, 92) 19px 19px 0px, rgb(92, 92, 92) 20px 20px 0px, rgb(92, 92, 92) 21px 21px 0px, rgb(92, 92, 92) 22px 22px 0px, rgb(92, 92, 92) 23px 23px 0px, rgb(92, 92, 92) 24px 24px 0px, rgb(92, 92, 92) 25px 25px 0px, rgb(92, 92, 92) 26px 26px 0px, rgb(92, 92, 92) 27px 27px 0px, rgb(92, 92, 92) 28px 28px 0px, rgb(92, 92, 92) 29px 29px 0px, rgb(92, 92, 92) 30px 30px 0px, rgb(92, 92, 92) 31px 31px 0px, rgb(92, 92, 92) 32px 32px 0px, rgb(92, 92, 92) 33px 33px 0px, rgb(92, 92, 92) 34px 34px 0px, rgb(92, 92, 92) 35px 35px 0px, rgb(92, 92, 92) 36px 36px 0px, rgb(92, 92, 92) 37px 37px 0px, rgb(92, 92, 92) 38px 38px 0px, rgb(92, 92, 92) 39px 39px 0px, rgb(92, 92, 92) 40px 40px 0px, rgb(92, 92, 92) 41px 41px 0px, rgb(92, 92, 92) 42px 42px 0px, rgb(92, 92, 92) 43px 43px 0px, rgb(92, 92, 92) 44px 44px 0px, rgb(92, 92, 92) 45px 45px 0px;
+  background: rgb(131, 131, 131);
+}
+
+body{
+    font-family: 'Yanone Kaffeesatz';
+    background-color: #B0F7F4;
+}
+
+
+#osito{
+    width: auto;
+    height: 454px;
+    background-image: url(../images/Dibujo1.png);
+    position: relative;
+    background-repeat: no-repeat;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0%   {background-image:url(../images/Dibujo1.png); left:0px; top:0px;}
+    25%  {background-image:url(../images/Dibujo2.png); left:200px; top:0px;}
+    50%  {background-image:url(../images/Dibujo2.png); left:200px; top:200px;}
+    75%  {background-image:url(../images/Dibujo1.png); left:0px; top:200px;}
+    100% {background-image:url(../images/Dibujo1.png); left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-image:url(../images/Dibujo1.png); left:0px; top:0px;}
+    25%  {background-image:url(../images/Dibujo2.png); left:200px; top:0px;}
+    50%  {background-image:url(../images/Dibujo2.png); left:200px; top:200px;}
+    75%  {background-image:url(../images/Dibujo1.png); left:0px; top:200px;}
+    100% {background-image:url(../images/Dibujo1.png); left:0px; top:0px;}
+}
+
+#abeja{
+    width: auto;
+    height: 100%;
+    background-image: url(../images/abeja1.png);
+    position: relative;
+    background-repeat: no-repeat;
+    -webkit-animation-name: examplee; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
+    animation-name: examplee;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes examplee {
+    
+    0%  {background-image:url(../images/abeja1.png); left:300px; top:0px;}
+    25%  {background-image:url(../images/abeja2.png); left:300px; top:300px;}
+    50%  {background-image:url(../images/abeja3.png); left:0px; top:300px;}
+    75% {background-image:url(../images/abeja4.png); left:0px; top:0px;}
+    100%  {background-image:url(../images/abeja1.png); left:300px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes examplee {
+    0%  {background-image:url(../images/abeja1.png); left:300px; top:0px;}
+    25%  {background-image:url(../images/abeja2.png); left:300px; top:300px;}
+    50%  {background-image:url(../images/abeja3.png); left:0px; top:300px;}
+    75% {background-image:url(../images/abeja4.png); left:0px; top:0px;}
+    100%  {background-image:url(../images/abeja1.png); left:300px; top:0px;}
+}
+
+
+@media(min-width:480px) {
+
+  
+}
+@media(min-width:768px) {
+
+}
+
+
+@media screen and (max-width: 991px) {
+
+}
+@media screen and (min-width: 992px) {  
+
+}
+
+

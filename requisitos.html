@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CENTRO DE IDIOMAS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Centro de Idiomas USMP">
+<meta name="author" content="Diana Llanos">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main1.css" rel="stylesheet">
+<link href="css/main2.css" rel="stylesheet">
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href="css/navbar-custom3.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/materialize.css">
+</head>
+<script type="text/javascript">
+      $(document).ready(function() {
+        //$("a").removeClass("disabled");
+        /*$(window).on('scroll',function() {
+          var scrolltop = $(this).scrollTop();
+          if(scrolltop >= 210) {
+            $('#encabezado1-1').addClass('aparece');
+          }
+          else if(scrolltop <= 205) {
+            $('#encabezado1-1').addClass('desaparece');
+          }
+        });*/
+        var h = window.innerHeight
+            $("#container-index").css("height",h);
+        var mq = window.matchMedia( "(max-width: 767px)" );
+            if (mq.matches) {
+              $(".dropdown-toggle").removeClass("disabled");
+              $("#nav-left").removeClass("desaparece");
+              $('ul#ingles-ul li a').click(function(event) {
+                $("#ingles-nav>.navbar-collapse").removeClass('in');
+                event.stopPropagation();
+              });
+              $('#login').appendTo('#modal-login');
+            }else{
+              $('#login').appendTo('#butocu-div');
+              $(".dropdown-toggle").addClass("disabled");
+            }
+        $(window).bind('scroll', function() {
+        if ($(window).scrollTop() > 275) {
+        $('#navbar-ingles').addClass('fixed');
+        }
+        else {
+        $('#navbar-ingles').removeClass('fixed');
+        }
+        });
+            $("ul#ingles-ul li a").click(function (){
+              var h = $(this).attr("href");
+              $('html, body').animate({
+                scrollTop: $(h).offset().top
+              }, 2000);
+            });
+        $(window).on('resize', handler);
+          function handler( event ) {
+            var mq = window.matchMedia( "(max-width: 767px)" );
+            if (mq.matches) {
+              $("#nav-left").removeClass("desaparece");
+              $(".dropdown-toggle").removeClass("disabled");
+              $('ul#ingles-ul li a').click(function(event) {
+                $("#ingles-nav>.navbar-collapse").removeClass('in');
+                event.stopPropagation();
+              });
+             $('#login').appendTo('#modal-login');
+            }else{
+              $('#login').appendTo('#butocu-div');
+              $(".dropdown-toggle").addClass("disabled");  
+            }
+            var h = window.innerHeight
+            $("#container-index").css("height",h);
+          }
+        $("#nav-principal .nav a").on("click", function(){
+         $("#nav-principal .nav").find(".active").removeClass("active");
+         $(this).parent().addClass("active");
+        });
+        $("#ingles-ul li a").on("click", function(){
+           $("#ingles-ul li").find(".active").removeClass("active");
+           $(this).parent().addClass("active");
+        });
+        $('#ingles-ul li a').click(function(e){
+            $('html,body').scrollTo(this.hash,this.hash);
+            e.preventDefault();
+        });
+        /*
+         $("#butocu-div").on("click",function(){
+            if ($(".izq")[0]){
+              $("#navbar-ingles").removeClass("margin0");
+              $("#navbar-ingles").addClass("margin20");
+              $("#nav-left").removeClass("izq");
+              $("#nav-left").addClass("desaparece");
+              $("#contenido").removeClass("der");
+              $("#butocu-div").removeClass("bkg-verdesito");
+              $("#butocu-div").addClass("bkg-rojito");
+            } else {
+              $("#navbar-ingles").removeClass("margin20");
+              $("#navbar-ingles").addClass("margin0");
+                $("#nav-left").removeClass("desaparece");
+                $("#nav-left").addClass("izq");
+              $("#contenido").addClass("der");
+              $("#butocu-div").addClass("bkg-verdesito");
+              $("#butocu-div").removeClass("bkg-rojito");
+            }
+        });*/
+      
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+
+      });
+   </script>
+<body data-spy="scroll" data-target="#navbar-ingles">
+<div id="first-container" class="container">
+  <div id="first-row" class="row">
+    <div id="butocu-div" class="col-md-12 col-sm-12">
+    <form id="login" class="form-inline">
+    <h3 class="hidden-lg text-center text-white">Iniciar sesión</h3>
+
+  <div class="input-field form-group">
+    <i class="mdi-action-account-circle prefix"></i>
+    <label class="sr-only" for="exampleInputEmail3">Usuario</label>
+    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Usuario">
+  </div>
+  <div class="input-field form-group">
+    <i class="mdi-action-verified-user prefix"></i>
+    <label class="sr-only" for="exampleInputPassword3">Contraseña</label>
+    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Contraseña">
+  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Ingresar
+    <i class="mdi-content-send right"></i>
+  </button>
+        
+</form>
+    </div>
+    <div id="nav-left" class="">
+      <nav id="nav-principal" class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CENTRO DE IDIOMAS USMP</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><p> Inicio</p></a></li>
+          <li>
+          <a href="institucional.html"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><p> Institucional</p></a>
+          </li>
+          <li>
+          <a href="programa.html"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span><p> Programa de Estudios</p></a>
+          </li>
+          <li class="active"><a href="requisitos.html"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span><p> Requisitos e Inversión</p></a></li>
+          <li>
+          <a href="sedes.html"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><p> Sedes y Horarios</p></a>
+          </li>
+          <li><a href="clasificacion.html"><span class="glyphicon glyphicon-check" aria-hidden="true"></span><p> Examen Clasificación</p></a></li>
+          <li>
+          <a href="cronograma.html"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span><p> Cronograma Anual</p></a>
+          </li>
+          <li><a href="preguntas.html"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span><p> Preguntas Frecuentes</p></a></li>
+          <li><a href="contactenos.html"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span><p> Contáctenos</p></a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+      </nav>
+    </div>
+    <a id="login-a" class="waves-effect waves-light btn modal-trigger" href="#modal3">Iniciar sesión</a>
+    <div id="modal3" class="modal bottom-sheet">
+          <div id="modal-login" class="modal-content">
+
+          </div>
+        </div>
+    <div id="contenido" class="col-md-12 col-sm-12">
+            <div class="container-somos">
+        <div id="encabezado1-1" class="row" style="margin:0;">
+          <div class="col-md-12" style="padding:0">
+            <div style="padding:0" class="container">
+              <ol class="breadcrumb">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="active">Requisitos e Inversión</li>
+              </ol>
+              <h1 class="bkg-verde text-right">REQUISITOS E INVERSIÓN</h1>
+              <div style="background: url('images/img-ref.png') no-repeat center 50%; background-size: cover; height: 300px;">
+                <div class="box">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section id="requisitos" class="bkg-celeste color ult-section">
+             
+                <h3 class="celeste">REQUISITOS E INVERSIÓN</h3>
+                <ul>
+                <li class="text-black text-left parrafo">Ser mayor de 14 años.</li>
+                <li class="text-black text-left parrafo">Matricularse hasta 1 día antes de iniciar clases y abonar S/. 139.00 mensuales en el caso de cursos regulares de lunes a viernes y/o interdiarios. Para el curso diario intensivo el pago es de S/. 278.00 mensuales. Para los cursos sabatinos y/o dominicales el pago por ciclo es de S/. 278.00. </li>
+                <li class="text-black text-left parrafo">Abonar el costo de libros según el idioma.</li>
+                <li class="text-black text-left parrafo">Presentar el original de D.N.I, Libreta Militar, Boleta Militar y/o Partida de Nacimiento,
+según corresponda.</li>
+                </ul>
+          </section>
+
+
+        
+        <svg class="bkg-celeste" id="clouds" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
+        <path d="M-5 100 Q 0 20 5 100 Z M0 100 Q 5 0 10 100 M5 100 Q 10 30 15 100 M10 100 Q 15 10 20 100 M15 100 Q 20 30 25 100 M20 100 Q 25 -10 30 100 M25 100 Q 30 10 35 100 M30 100 Q 35 30 40 100 M35 100 Q 40 10 45 100 M40 100 Q 45 50 50 100 M45 100 Q 50 20 55 100 M50 100 Q 55 40 60 100 M55 100 Q 60 60 65 100 M60 100 Q 65 50 70 100 M65 100 Q 70 20 75 100 M70 100 Q 75 45 80 100 M75 100 Q 80 30 85 100 M80 100 Q 85 20 90 100 M85 100 Q 90 50 95 100 M90 100 Q 95 25 100 100 M95 100 Q 100 15 105 100 Z"></path>
+        </svg>
+        <section id="ingles-foot" class="clouds">
+        <p class="text-center">
+          <br/>
+          Copyright © 2015 Área de Diseño Gráfico y Multimedia - FIA, USMP.<br/>Todos los derechos reservados<br/>
+          <br/>
+        </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+<script src="js/jquery.localscroll-1.2.7-min.js" type="text/javascript"></script>
+<script src="js/jquery.scrollTo-1.4.2-min.js" type="text/javascript"></script>
+<!-- NICE Scroll plugin -->
+<script>
+        //scroll bar custom
+          jQuery(document).ready(
+          function() {  
+            jQuery("html").niceScroll({cursorcolor:"#333"});
+          }
+        );
+        </script>
+<div id="ascrail2000" class="nicescroll-rails" style="width: 7px; z-index: auto; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;">
+  <div style="position: relative; top: 419px; float: right; width: 5px; height: 62px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(51, 51, 51); background-clip: padding-box;">
+  </div>
+</div>
+<div id="ascrail2000-hr" class="nicescroll-rails" style="height: 7px; z-index: auto; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;">
+  <div style="position: relative; top: 0px; height: 5px; width: 1280px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(51, 51, 51); background-clip: padding-box;">
+  </div>
+</div>
+<script src="js/modernizr.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script src="js/main.js" type="text/javascript"></script>
+<a href="#0" class="cd-top">Top</a>
+</body>
+</html>

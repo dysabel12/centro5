@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>CENTRO DE IDIOMAS</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Centro de Idiomas USMP">
+      <meta name="author" content="Diana Llanos">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/bootstrap-theme.css" rel="stylesheet">
+      <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/main1.css" rel="stylesheet">
+      <link href="css/main2.css" rel="stylesheet">
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+      <link href="css/navbar-custom1.css" rel="stylesheet">
+   </head>
+   <script type="text/javascript">
+    
+      $(document).ready(function() {
+        //$("a").removeClass("disabled");
+        /*$(window).on('scroll',function() {
+          var scrolltop = $(this).scrollTop();
+       
+          if(scrolltop >= 210) {
+            $('#encabezado1-1').addClass('aparece');
+          }
+           
+          else if(scrolltop <= 205) {
+            $('#encabezado1-1').addClass('desaparece');
+          }
+        });*/
+        
+        var mq = window.matchMedia( "(max-width: 767px)" );
+            if (mq.matches) {
+              $(".dropdown-toggle").removeClass("disabled");
+              $("#nav-left").removeClass("desaparece");
+              $('ul#ingles-ul li a').click(function(event) {
+                $("#ingles-nav>.navbar-collapse").removeClass('in');
+                event.stopPropagation();
+              });
+            }else{
+              $("#nav-left").addClass("desaparece");
+              $(".dropdown-toggle").addClass("disabled");
+              $("#butocu-div").addClass("bkg-rojito");
+              $("#navbar-ingles").removeClass("margin0");
+              $("#navbar-ingles").addClass("margin20");
+            }
+        $(window).bind('scroll', function() {
+        if ($(window).scrollTop() > 275) {
+        $('#navbar-ingles').addClass('fixed');
+        }
+        else {
+        $('#navbar-ingles').removeClass('fixed');
+        }
+        });
+            $("ul#ingles-ul li a").click(function (){
+              var h = $(this).attr("href");
+              $('html, body').animate({
+                scrollTop: $(h).offset().top
+              }, 2000);
+            });
+        $(window).on('resize', handler);
+          function handler( event ) {
+            var mq = window.matchMedia( "(max-width: 767px)" );
+            if (mq.matches) {
+              $("#nav-left").removeClass("desaparece");
+              $(".dropdown-toggle").removeClass("disabled");
+              $('ul#ingles-ul li a').click(function(event) {
+                $("#ingles-nav>.navbar-collapse").removeClass('in');
+                event.stopPropagation();
+              });
+            }else{
+              $("#nav-left").addClass("desaparece");
+              $(".dropdown-toggle").addClass("disabled");  
+              if ($(".izq")[0]){
+              $("#navbar-ingles").removeClass("margin0");
+              $("#navbar-ingles").addClass("margin20");
+              $("#nav-left").removeClass("izq");
+              $("#nav-left").addClass("desaparece");
+              $("#contenido").removeClass("der");
+              $("#butocu-div").removeClass("bkg-verdesito");
+              $("#butocu-div").addClass("bkg-rojito");
+
+            } else {
+              $("#navbar-ingles").removeClass("margin20");
+              $("#navbar-ingles").addClass("margin0");
+                $("#nav-left").removeClass("desaparece");
+                $("#nav-left").addClass("izq");
+              $("#contenido").addClass("der");
+              
+              $("#butocu-div").addClass("bkg-verdesito");
+              $("#butocu-div").removeClass("bkg-rojito");
+            }
+            }
+          }
+        $("#nav-principal .nav a").on("click", function(){
+         $("#nav-principal .nav").find(".active").removeClass("active");
+         $(this).parent().addClass("active");
+        });
+      
+        $("ingles-ul li a").on("click", function(){
+           $("ingles-ul li").find(".active").removeClass("active");
+           $(this).parent().addClass("active");
+        });
+         $("#butocu-div").on("click",function(){
+            /**$("#nav-left").css("width", "9%");
+            $("#contenido").css("width", "91%");**/
+            if ($(".izq")[0]){
+              $("#navbar-ingles").removeClass("margin0");
+              $("#navbar-ingles").addClass("margin20");
+              $("#nav-left").removeClass("izq");
+              $("#nav-left").addClass("desaparece");
+              $("#contenido").removeClass("der");
+              $("#butocu-div").removeClass("bkg-verdesito");
+              $("#butocu-div").addClass("bkg-rojito");
+
+            } else {
+              $("#navbar-ingles").removeClass("margin20");
+              $("#navbar-ingles").addClass("margin0");
+                $("#nav-left").removeClass("desaparece");
+                $("#nav-left").addClass("izq");
+              $("#contenido").addClass("der");
+              
+              $("#butocu-div").addClass("bkg-verdesito");
+              $("#butocu-div").removeClass("bkg-rojito");
+            }
+
+
+        });
+
+      });
+   </script>
+   <body data-spy="scroll" data-target="#navbar-ingles">
+    <div id="first-container" class="container">
+      <div id="first-row" class="row">
+        <div id="butocu-div"></div>
+        <div id="nav-left" class="col-md-3 col-sm-4">
+            <nav id="nav-principal" class="navbar navbar-default" role="navigation">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">CENTRO DE IDIOMAS USMP</a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+                                <ul class="nav navbar-nav">
+                  <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio<span style="float:right;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> Institucional<span style="float:right;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="somos.html">Quiénes Somos</a></li>
+                      <li><a href="historia.html">Historia</a></li>
+                      <li><a href="misionvision.html">Misión y Visión</a></li>
+                      <li><a href="extension.html">Extensión y Proyección</a></li>
+                      <li><a href="aprendizaje.html">Aprendizaje y Enseñanza</a></li>
+                      <li><a href="comunicacion.html">Comunicación Mundial</a></li>
+                    </ul>
+                  </li>
+                  <li class="active dropdown">
+                    <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Programa de Estudios<span style="float:right;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="ingles-pregrado.html">Inglés Pre-Grado</a></li>
+                      <li><a href="#">Lenguas Extranjeras</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Requisitos e Inversión<span style="float:right;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sedes y Horarios<span style="float:right;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Sede Jesús María</a></li>
+                      <li><a href="#">Sede Santa Anita</a></li>
+                      <li><a href="#">Sede Pueblo Libre</a></li>
+                      <li><a href="#">Sede San Isidro</a></li>
+                      <li><a href="#">Sede Chiclayo</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Examen Clasificación<span style="float:right;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> Cronograma Anual<span style="float:right;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Clases Diarias</a></li>
+                      <li><a href="#">Clases Sabatinas</a></li>
+                      <li><a href="#">Clases Dominicales</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Preguntas Frecuentes<span style="float:right;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> Consulta de Notas<span style="float:right;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> Contáctenos<span style="float:right;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+
+                </ul>
+              </div><!-- /.navbar-collapse -->
+            </nav>
+        </div>
+
+
+
+
+      <div id="contenido" class="col-md-9 col-sm-8">
+        <div class="container-ingles">
+        <div id="encabezado1-1"  class="row" style="margin:0;">
+          <div class="col-md-12" style="padding:0">
+            <div style="padding:0" class="container">
+              <ol class="breadcrumb">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="active">Inglés Pre-Grado</li>
+              </ol>
+              <h1 class="bkg-verde text-right">INGLES PRE-GRADO</h1>
+             <div style="background: url('images/ingles.JPG') no-repeat center 50%; background-size: cover;       height: 300px;">
+               <div class="box"></div> 
+             </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div id="navbar-ingles">
+           <nav id="ingles-nav" role="navigation">
+            
+              <div class="navbar-header">
+                <button id="toggle-ingles" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse2">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                 
+              </div>
+
+             
+              <div class="collapse navbar-collapse navbar-ex1-collapse2">
+                <ul id="ingles-ul" class="nav nav-justified" role="tablist">
+                  <li role="presentation"><a href="#fundamentacion">Fundamentación</a></li>
+            <li role="presentation"><a href="#objetivo">Objetivo</a></li>
+            <li role="presentation"><a href="#perfil">Perfil del Egresado</a></li>
+            <li role="presentation"><a href="#plan">Plan Curricular</a></li>
+
+                </ul>
+
+              </div> 
+
+
+
+
+            </nav>
+          </div> 
+
+
+
+
+
+
+
+
+          <section id="fundamentacion" class="bkg-white col-2 ss-style-triangles">
+
+              <div class="column text text-black">
+                <h3 class="text-center rojo-tittle">FUNDAMENTACIÓN</h3><br>
+                <p class="text-black">Inglés es la lengua global de comunicación por excelencia. Es la lengua más importante para los negocios internacionales. Es indispensable para la investigación, los viajes, sean por turismo o negocios. La mayoría de la información en las páginas de Internet se encuentran en este idioma.</p><br>
+                <p class="text-black">Desde luego existen otros idiomas con una importante presencia internacional, sin embargo el inglés es la lengua dominante en los libros, los periódicos, los aeropuertos, las conferencias académicas, las ciencias, la tecnología, la diplomacia, el deporte, y la publicidad. Ningún otro idioma ha alcanzado tal perfil a nivel mundial. En nuestro medio, el aprendizaje de este idioma constituye una gran ventaja, tanto en el plano académico, laboral, personal, cultural; puesto que, en síntesis, guarda una estrecha relación con todas las áreas del saber.</p>
+              </div>
+          </section>
+
+          <section id="objetivo" class="bkg-turqueza color">
+              <h3 class="blanco-tittle">OBJETIVO</h3><br>
+              <br>
+              <p>El CIUSMP fue creado con el objetivo de brindar a los alumnos de nuestra casa de estudios así como a personas interesadas en el aprendizaje del inglés una adecuada formación en competencia lingüística del idioma, a través del desarrollo de las cuatro habilidades comunicativas: hablar (speaking), escuchar (listening), leer (reading) y escribir (writing), haciendo que el alumno internalice las nociones y funciones lingûísticas y gramaticales aprendidas, y tenga acceso a programas de Internet en lengua extranjera, a fin de que haga un uso correcto del idioma mediante la práctica constante y esté a la vanguardia de las exigencias del mercado y consolide así su formación profesional. </p>
+          </section>
+
+          <section id="perfil" class="bkg-white col-2 ss-style-doublediagonal">
+              <div class="text-black column">
+                <h3 class="verde-tittle">PERFIL DEL EGRESADO</h3>
+                  <p class="text-black">El egresado del CIUSMP, al concluir el nivel Avanzado del programa de estudios, es capaz de desarrollar una comunicación lingüística de manera óptima (genera respuestas), se desenvuelve con mayor fluidez y puede manejar materiales de mayor exigencia cognitiva, ubicándolo en una categoría de alta competitividad profesional. Posee un conocimiento sólido de la gramática, el vocabulario, expresiones orales y la cultura, lo que le abre nuevas ventanas al conocimiento y acceso a la tecnología de punta, con posibilidad de postular a becas en el extranjero pudiendo ampliar su formación profesional.</p>
+              </div>
+          </section>
+
+          <section id="plan" class="bkg-turqueza col-2 ss-style-halfcircle">
+              <div class="column text">
+                <h3 class="blanco-tittle text-center">PLAN CURRICULAR DE INGLÉS</h3><br><br>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="text-left panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          D I A R I O
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="panel-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <tr>
+                        <th>NIVELES</th>
+                        <th>CICLOS</th>
+                        <th>HORAS</th>
+                        <th>MESES</th>
+                      </tr>
+                      <tr>
+                        <td>BÁSICO</td>
+                        <td>Starter 1 <br>Starter 2<br>Starter 3<br>Starter 4<br>Starter 5<br>Elementary 1<br>Elementary 2<br>Elementary 3<br>Elementary 4<br>Elementary 5<br><b>Interactive Basic</b><br>Grammar 1<br><b>Interactive Basic</b><br>Gramar2
+                        </td>
+                        <td>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br><br>27 Horas<br><br>27 Horas<br></td>
+                        <td>1 Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br><br>1Mes<br><br>1Mes<br></td>
+                      </tr>
+                      <tr class="alt">
+                        <td>INTERMEDIO</td>
+                        <td>Pre-Intermediate 1<br>Pre-Intermediate 2<br>Pre-Intermediate 3<br>Pre-Intermediate 4<br>Pre-Intermediate 5<br>Intermediate 1<br>Intermediate 2<br>Intermediate 3<br>Intermediate 4<br>Intermediate 5<br><b>Interactive Intermediate</b><br>Grammar1<br><b>Interactive Intermediate</b><br>Grammar 2</td>
+                        <td>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br><br>27 Horas<br><br>27 Horas<br></td>
+                        <td>1 Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br><br>1Mes<br><br>1Mes<br></td>
+                      </tr>
+                      <tr>
+                        <td>AVANZADO</td>
+                        <td>High-Intermediate 1<br>High-Intermediate 2<br>High-Intermediate 3<br>High-Intermediate 4<br>High-Intermediate 5<br>High-Intermediate 6<br>Advanced 1<br>Advanced 2<br>Advanced 3<br>Advanced 4<br>Advanced 5<br>Advanced 6</td>
+                        <td>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br></td>
+                        <td>1 Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br></td>
+                      </tr>
+                      
+                    </table>
+                  </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                      <h4 class="text-left panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          S A B A T I N O
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                      <div class="panel-body">
+                                          <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <tr>
+                        <th>NIVELES</th>
+                        <th>CICLOS</th>
+                        <th>HORAS</th>
+                        <th>MESES</th>
+                      </tr>
+                      <tr>
+                        <td>BÁSICO</td>
+                        <td>Starter 1 <br>Starter 2<br>Starter 3<br>Starter 4<br>Starter 5<br>Elementary 1<br>Elementary 2<br>Elementary 3<br>Elementary 4<br>Elementary 5<br><b>Interactive Basic</b><br>Grammar 1<br><b>Interactive Basic</b><br>Gramar2
+                        </td>
+                        <td>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br><br>27 Horas<br><br>27 Horas<br></td>
+                        <td>1 Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br><br>1Mes<br><br>1Mes<br></td>
+                      </tr>
+                      <tr class="alt">
+                        <td>INTERMEDIO</td>
+                        <td>Pre-Intermediate 1<br>Pre-Intermediate 2<br>Pre-Intermediate 3<br>Pre-Intermediate 4<br>Pre-Intermediate 5<br>Intermediate 1<br>Intermediate 2<br>Intermediate 3<br>Intermediate 4<br>Intermediate 5<br><b>Interactive Intermediate</b><br>Grammar1<br><b>Interactive Intermediate</b><br>Grammar 2</td>
+                        <td>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br><br>27 Horas<br><br>27 Horas<br></td>
+                        <td>1 Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br><br>1Mes<br><br>1Mes<br></td>
+                      </tr>
+                      <tr>
+                        <td>AVANZADO</td>
+                        <td>High-Intermediate 1<br>High-Intermediate 2<br>High-Intermediate 3<br>High-Intermediate 4<br>High-Intermediate 5<br>High-Intermediate 6<br>Advanced 1<br>Advanced 2<br>Advanced 3<br>Advanced 4<br>Advanced 5<br>Advanced 6</td>
+                        <td>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br>27 Horas<br></td>
+                        <td>1 Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br>1Mes<br></td>
+                      </tr>
+                      
+                    </table>
+                  </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+
+              </div>
+          </section>
+
+
+          <svg class="bkg-turqueza" id="clouds" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M-5 100 Q 0 20 5 100 Z
+                   M0 100 Q 5 0 10 100
+                   M5 100 Q 10 30 15 100
+                   M10 100 Q 15 10 20 100
+                   M15 100 Q 20 30 25 100
+                   M20 100 Q 25 -10 30 100
+                   M25 100 Q 30 10 35 100
+                   M30 100 Q 35 30 40 100
+                   M35 100 Q 40 10 45 100
+                   M40 100 Q 45 50 50 100
+                   M45 100 Q 50 20 55 100
+                   M50 100 Q 55 40 60 100
+                   M55 100 Q 60 60 65 100
+                   M60 100 Q 65 50 70 100
+                   M65 100 Q 70 20 75 100
+                   M70 100 Q 75 45 80 100
+                   M75 100 Q 80 30 85 100
+                   M80 100 Q 85 20 90 100
+                   M85 100 Q 90 50 95 100
+                   M90 100 Q 95 25 100 100
+                   M95 100 Q 100 15 105 100 Z"></path>
+          </svg>
+
+          <section id="ingles-foot" class="clouds">
+              <p class="text-center"><br />
+               Copyright © 2015 Área de Diseño Gráfico y Multimedia - FIA, USMP.<br />Todos los derechos reservados<br />
+               <br />
+            </p>
+  
+          </section>
+
+          </div>
+      </div>
+
+      </div>
+
+
+    </div>
+       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+       <!-- Include all compiled plugins (below), or include individual files as needed -->
+       <script src="js/bootstrap.min.js"></script>
+       <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+
+        <script src="js/jquery.parallax-1.1.3.js" type="text/javascript" ></script>
+        <script src="js/jquery.localscroll-1.2.7-min.js" type="text/javascript" ></script>
+        <script src="js/jquery.scrollTo-1.4.2-min.js" type="text/javascript" ></script>
+
+
+        <!-- NICE Scroll plugin -->
+        <script>
+        //scroll bar custom
+          jQuery(document).ready(
+          function() {  
+            jQuery("html").niceScroll({cursorcolor:"#333"});
+          }
+        );
+        </script>
+        <div id="ascrail2000" class="nicescroll-rails" style="width: 7px; z-index: auto; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;"><div style="position: relative; top: 419px; float: right; width: 5px; height: 62px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(51, 51, 51); background-clip: padding-box;"></div></div>
+        <div id="ascrail2000-hr" class="nicescroll-rails" style="height: 7px; z-index: auto; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;"><div style="position: relative; top: 0px; height: 5px; width: 1280px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(51, 51, 51); background-clip: padding-box;"></div></div>
+        <script src="js/modernizr.js" type="text/javascript"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+        <a href="#0" class="cd-top">Top</a>
+        
+   </body>
+</html>

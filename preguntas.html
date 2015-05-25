@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CENTRO DE IDIOMAS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Centro de Idiomas USMP">
+<meta name="author" content="Diana Llanos">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main1.css" rel="stylesheet">
+<link href="css/main2.css" rel="stylesheet">
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href="css/navbar-custom3.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/materialize.css">
+</head>
+<script type="text/javascript">
+      $(document).ready(function() {
+        //$("a").removeClass("disabled");
+        /*$(window).on('scroll',function() {
+          var scrolltop = $(this).scrollTop();
+          if(scrolltop >= 210) {
+            $('#encabezado1-1').addClass('aparece');
+          }
+          else if(scrolltop <= 205) {
+            $('#encabezado1-1').addClass('desaparece');
+          }
+        });*/
+        var h = window.innerHeight
+            $("#container-index").css("height",h);
+        var mq = window.matchMedia( "(max-width: 767px)" );
+            if (mq.matches) {
+              $(".dropdown-toggle").removeClass("disabled");
+              $("#nav-left").removeClass("desaparece");
+              $('ul#ingles-ul li a').click(function(event) {
+                $("#ingles-nav>.navbar-collapse").removeClass('in');
+                event.stopPropagation();
+              });
+              $('#login').appendTo('#modal-login');
+            }else{
+              $('#login').appendTo('#butocu-div');
+              $(".dropdown-toggle").addClass("disabled");
+            }
+        $(window).bind('scroll', function() {
+        if ($(window).scrollTop() > 275) {
+        $('#navbar-ingles').addClass('fixed');
+        }
+        else {
+        $('#navbar-ingles').removeClass('fixed');
+        }
+        });
+            $("ul#ingles-ul li a").click(function (){
+              var h = $(this).attr("href");
+              $('html, body').animate({
+                scrollTop: $(h).offset().top
+              }, 2000);
+            });
+        $(window).on('resize', handler);
+          function handler( event ) {
+            var mq = window.matchMedia( "(max-width: 767px)" );
+            if (mq.matches) {
+              $("#nav-left").removeClass("desaparece");
+              $(".dropdown-toggle").removeClass("disabled");
+              $('ul#ingles-ul li a').click(function(event) {
+                $("#ingles-nav>.navbar-collapse").removeClass('in');
+                event.stopPropagation();
+              });
+             $('#login').appendTo('#modal-login');
+            }else{
+              $('#login').appendTo('#butocu-div');
+              $(".dropdown-toggle").addClass("disabled");  
+            }
+            var h = window.innerHeight
+            $("#container-index").css("height",h);
+          }
+        $("#nav-principal .nav a").on("click", function(){
+         $("#nav-principal .nav").find(".active").removeClass("active");
+         $(this).parent().addClass("active");
+        });
+        $("#ingles-ul li a").on("click", function(){
+           $("#ingles-ul li").find(".active").removeClass("active");
+           $(this).parent().addClass("active");
+        });
+        $('#ingles-ul li a').click(function(e){
+            $('html,body').scrollTo(this.hash,this.hash);
+            e.preventDefault();
+        });
+        /*
+         $("#butocu-div").on("click",function(){
+            if ($(".izq")[0]){
+              $("#navbar-ingles").removeClass("margin0");
+              $("#navbar-ingles").addClass("margin20");
+              $("#nav-left").removeClass("izq");
+              $("#nav-left").addClass("desaparece");
+              $("#contenido").removeClass("der");
+              $("#butocu-div").removeClass("bkg-verdesito");
+              $("#butocu-div").addClass("bkg-rojito");
+            } else {
+              $("#navbar-ingles").removeClass("margin20");
+              $("#navbar-ingles").addClass("margin0");
+                $("#nav-left").removeClass("desaparece");
+                $("#nav-left").addClass("izq");
+              $("#contenido").addClass("der");
+              $("#butocu-div").addClass("bkg-verdesito");
+              $("#butocu-div").removeClass("bkg-rojito");
+            }
+        });*/
+      
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+
+      });
+   </script>
+<body data-spy="scroll" data-target="#navbar-ingles">
+<div id="first-container" class="container">
+  <div id="first-row" class="row">
+    <div id="butocu-div" class="col-md-12 col-sm-12">
+    <form id="login" class="form-inline">
+    <h3 class="hidden-lg text-center text-white">Iniciar sesión</h3>
+
+  <div class="input-field form-group">
+    <i class="mdi-action-account-circle prefix"></i>
+    <label class="sr-only" for="exampleInputEmail3">Usuario</label>
+    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Usuario">
+  </div>
+  <div class="input-field form-group">
+    <i class="mdi-action-verified-user prefix"></i>
+    <label class="sr-only" for="exampleInputPassword3">Contraseña</label>
+    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Contraseña">
+  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Ingresar
+    <i class="mdi-content-send right"></i>
+  </button>
+        
+</form>
+    </div>
+    <div id="nav-left" class="">
+      <nav id="nav-principal" class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CENTRO DE IDIOMAS USMP</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><p> Inicio</p></a></li>
+          <li>
+          <a href="institucional.html"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><p> Institucional</p></a>
+          </li>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span><p> Programa de Estudios</p></a>
+          <ul class="dropdown-menu">
+            <li><a href="ingles-pregrado.html">Inglés Pre-Grado</a></li>
+            <li><a href="#">Lenguas Extranjeras</a></li>
+          </ul>
+          </li>
+          <li><a href="requisitos.html"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span><p> Requisitos e Inversión</p></a></li>
+          <li>
+          <a href="sedes.html"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><p> Sedes y Horarios</p></a>
+          </li>
+          <li><a href="clasificacion.html"><span class="glyphicon glyphicon-check" aria-hidden="true"></span><p> Examen Clasificación</p></a></li>
+          <li>
+          <a href="cronograma.html"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span><p> Cronograma Anual</p></a>
+          </li>
+          <li class="active"><a href="preguntas.html"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span><p> Preguntas Frecuentes</p></a></li>
+          <li><a href="contactenos.html"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span><p> Contáctenos</p></a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+      </nav>
+    </div>
+    <a id="login-a" class="waves-effect waves-light btn modal-trigger" href="#modal3">Iniciar sesión</a>
+    <div id="modal3" class="modal bottom-sheet">
+          <div id="modal-login" class="modal-content">
+
+          </div>
+        </div>
+    <div id="contenido" class="col-md-12 col-sm-12">
+    <div class="container-preguntas">
+        <div id="encabezado1-1" class="row" style="margin:0;">
+          <div class="col-md-12" style="padding:0">
+            <div style="padding:0" class="container">
+              <ol class="breadcrumb">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="active">Preguntas Frecuentes</li>
+              </ol>
+              <h1 class="bkg-verde text-right">PREGUNTAS FRECUENTES</h1>
+              <div style="background: url('images/img-ref.png') no-repeat center 50%; background-size: cover; height: 300px;">
+                <div class="box">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+          <section id="somos" class="bkg-celeste color ult-section">
+
+            <h3 class="celeste"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> PREGUNTAS FRECUENTES</h3>
+                <div class="panel-group pizarra" id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          ¿Cuando empiezan las inscripciones?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="panel-body">
+                        Las inscripciones para las modalidades: diaria, diaria intensiva, interdiaria, sabatina y dominical se inician los días 20 de cada mes hasta un día antes del inicio de clases.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          ¿Es necesario comenzar desde el primer ciclo?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                      <div class="panel-body">
+                        No es necesario, si usted tiene algún conocimiento del idioma puede dar un examen de clasificación previo pago del derecho correspondiente.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          De tener algún conocimiento del Idioma, ¿podemos dar el Examen de Clasificación?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                      <div class="panel-body">
+                        En efecto. De tener conocimientos, se les recomienda a los interesados someterse al examen de clasificación. Dicho examen está diseñado para evaluar a los alumnos con conocimientos previos del idioma y ubicarlos dentro de la estructura de nuestros cursos.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading4">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                          ¿A quién se aplica el Examen de Clasificación?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                      <div class="panel-body">
+                          Se aplica a:
+  
+                          <ul>
+                          <li>Estudiantes nuevos interesados en iniciar sus estudios en el CIUSMP.</li>
+
+                          <li>Estudiantes que estudiaron en el Centro y dejaron de estudiar más de (3) tres meses en la modalidad diaria, intensiva o interdiaria y (4) cuatro meses en la modalidad sabatina o dominical.</li>
+
+
+                          <li>Estudiantes que hayan desaprobado el mismo curso en tres oportunidades.</li>
+
+
+                          <li>Todas las personas interesadas en obtener un Certificado de Nivel.</li></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading5">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                          ¿En qué consiste el Examen de Clasificación?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                      <div class="panel-body">
+                        El examen de clasificación consta de una evaluación escrita consta de 90 preguntas y tiene 3 partes: gramática, vocabulario y comprensión de lectura. y una entrevista diseñado para evaluar a aquellos estudiantes que tengan conocimientos y manejo previo del idioma extranjero a nivel conversacional y ubicarlos dentro de la estructura curricular de nuestro programa de estudios.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading6">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                          ¿Qué hacer si no estoy de acuerdo con el resultado de mi Examen de Clasificación?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                      <div class="panel-body">
+                        El resultado de dicho examen es inapelable e irrevisable.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading7">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                          De requerir un Certificado de Nivel, ¿qué trámite debo hacer?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                      <div class="panel-body">
+                        El Certificado de nivel puede ser solicitado por alumnos de la USMP, CIUSMP, otras universidades y público en general, con un costo diferencial. Para este fin, el solicitante deberá rendir un examen de clasificación oral y escrito en el CIUSMP. Los resultados de los exámenes son inapelables. <br>El certificado de Nivel es válido para los trámites de bachiller, título o licenciatura, más no para optar el grado de maestría y/o doctorado. Para esos fines se requiere el Examen de Suficiencia. <br>Es necesario efectuar los pagos correspondientes por solicitud, hacer el pago del derecho por examen de clasificación y Certificado de Nivel. La entrega del Certificado de Nivel se efectúa a los siete días útiles después de haberse gestionado el trámite en la sede de su elección.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading8">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                          De requerir una Constancia de Convalidación, ¿qué trámite debo hacer?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+                      <div class="panel-body">
+                        Las convalidaciones se aplican cuando el interesado solicita el documento como requisito para optar el grado de maestro y/o doctor. Sólo se convalidará estudios de los niveles académicos concluidos con certificados y/o diplomas de instituciones de prestigio o de Centros de Idiomas de las universidades del país previa verificación de los mismos en la institución de procedencia.<br>
+                        Es necesario presentar Certificado y/o Diploma original de estudios. Luego de hacer la verificación y de proceder la convalidación, el solicitante deberá hacer el pago del derecho a Constancia de Convalidación así como presentar una fotocopia nítida de DNI y dos fotocopias legalizadas ante un notario del Certificado y/o Diploma original de estudios. La Constancia de Convalidación se expedirá a los 7 días útiles de presentado el expediente. De no proceder la convalidación, el solicitante deberá rendir un examen de suficiencia.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading9">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                          De requerir un Examen de Suficiencia y su certificación, ¿qué trámite debo hacer?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
+                      <div class="panel-body">
+                        El examen de suficiencia puede ser solicitado por aquellos interesados que teniendo el conocimiento del idioma, requieren una certificación como requisito para poder optar los grados de maestro o doctor. 
+                        <br>Es necesario efectuar los pagos correspondientes por solicitud, hacer el pago del derecho a examen de suficiencia y Certificación, así como presentar una fotocopia nítida de DNI. El examen de suficiencia lo puede rendir en la sede de su elección mas la Certificación de suficiencia se expedirá a los 7 días útiles en la Sede de Jesús María a título personal y portando el DNI.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading10">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                          ¿Hay algún pago por matrícula?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+                      <div class="panel-body">
+                        No. Se efectúa el pago de la pensión de enseñanza mensualmente en las modalidades: diaria, diaria intensiva e interdiaria. El pago es bimestral en la modalidad sabatina y dominical.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading11">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                          ¿Es necesaria la inscripción personal?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+                      <div class="panel-body">
+                        Puede inscribirle cualquier persona portando el DNI original además debe proporcionar ciertos datos como su correo electrónico y números telefónicos.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading12">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                          ¿Puedo solicitar factura?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+                      <div class="panel-body">
+                        Claro. De requerir factura, debes indicar la razón social, número de RUC y dirección de la empresa para realizar el trámite respectivo.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading13">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                          ¿Cuál es la capacidad de alumnos por aula?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
+                      <div class="panel-body">
+                        Una capacidad mínima de 7 alumnos, y máxima de acuerdo al aforo del aula. La institución se reserva el derecho de cerrar grupos que no alcancen el número mínimo requerido de alumnos.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading14">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                          ¿En qué consiste la evaluación durante el ciclo de estudios?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
+                      <div class="panel-body">
+                        Las evaluaciones son diarias (permanentes). Además, si el alumno es del antiguo currículo: World View (caso Inglés) rinde evaluaciones a la mitad y al final de cada ciclo, una oral (Examen Oral 1 y 2) y otras escritas (Examen de medio Ciclo y Examen Final). Si el alumno es del currículo nuevo World English (inglés) o de otros idiomas rinde dos evaluaciones, una oral (Examen Oral 1 y 2) y otra escrita (Examen Final).
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading15">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                          ¿Cuál es la nota mínima aprobatoria?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
+                      <div class="panel-body">
+                        Para aprobar el ciclo en cualquiera de las modalidades, el alumno debe alcanzar la nota mínima de 14.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading16">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                          ¿Existe una política de tardanzas y faltas?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
+                      <div class="panel-body">
+                        <ul>
+                        <li>Sí. Los alumnos deben llegar puntualmente al salón para evitar interrupciones durante el dictado de clases, teniendo un tiempo máximo de tolerancia de 10 minutos. En caso de exceder esta tolerancia, deberán esperar a que se les permita el ingreso transcurridos los primeros 45 minutos.</li>
+                        <li>Con 5 inasistencias en la modalidad diaria, 2 inasistencias en la modalidad interdiaria, intensiva, sabatina o dominical, los alumnos están automáticamente desaprobados del curso.</li>
+
+                        <li>En modalidad sabatina o dominical, el alumno sólo puede tener 1 falta y 2 tardanzas durante las 8 semanas que dura el ciclo. Las faltas se cuentan desde el primer día de clases.</li></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading17">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                          ¿Qué hacer para realizar un cambio de horario o local?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
+                      <div class="panel-body">
+                        El cambio de horario se podrá solicitar en el momento de su matrícula salvo casos excepcionales hasta la segunda sesión en todas las modalidades previa evaluación de cada caso por la oficina de coordinación sin afectar la gestión académica del mes en curso. De ser aceptada esta solicitud el estudiante deberá abonar el pago del derecho correspondiente.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading18">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                          ¿Cómo solicito una Constancia de Estudios?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
+                      <div class="panel-body">
+                        Si necesita solicitar una Constancia de Estudios debe cancelar los pagos respectivos por solicitud y Constancia de Estudios y presentar una fotocopia nítida del DNI. Las Constancias de Estudios pueden ser solicitadas por aquellos alumnos que estudiaron 1 mes como mínimo en el Centro o que concluyeron un nivel o todos los niveles de nuestra estructura curricular y se tramita en la sede del CIUMP donde estudia.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading19">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse19" aria-expanded="false" aria-controls="collapse19">
+                          ¿Qué necesito para obtener un Certificado de Estudios?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading19">
+                      <div class="panel-body">
+                        Es necesario terminar con notas aprobatorias (mayor o igual a 14 puntos) cualquier nivel y realizar los pagos correspondientes por solicitud y Certificado de Estudios, y presentar una fotocopia nítida del DNI. Se puede tramitar en la sede del CIUSMP donde estudia.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading20">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse20" aria-expanded="false" aria-controls="collapse20">
+                          ¿Qué trámite debo seguir para solicitar mi Diploma de Egresado?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20">
+                      <div class="panel-body">
+                        El Diploma de Egresado puede ser solicitado por aquel alumno que concluyó satisfactoriamente toda nuestra estructura curricular. Se debe realizar los pagos correspondientes por solicitud y Diploma de Egresado, y presentar una fotocopia nítida del DNI. Se tramita en la sede del CIUSMP donde estudió y se recoge personalmente en la secretaría de la dirección del <b>Centro de Idiomas Sede Jesús María (Av. Brasil 1857)</b> y para los de la Filial Norte en la <b>Coordinación de la Sede Chiclayo (Calle Nazareth 621- Chiclayo)</b> portando su DNI .
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading21">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
+                          ¿Cuánto tiempo demora el trámite de Constancias, Certificados y Diplomas?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading21">
+                      <div class="panel-body">
+                        La entrega de la constancia de estudios o matricula se efectúa a los cinco días útiles, los certificados de notas y certificados de nivel a los siete días útiles después de haberse gestionado el trámite en la sede de su elección. La entrega de Diplomas se realiza a los quince días útiles en Lima después de haber sido recibida la solicitud y a los 30 días útiles en Chiclayo después de la remisión a la Dirección CIUSMP en Lima.
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+          </section>
+       
+        <svg class="bkg-celeste" id="clouds" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
+        <path d="M-5 100 Q 0 20 5 100 Z M0 100 Q 5 0 10 100 M5 100 Q 10 30 15 100 M10 100 Q 15 10 20 100 M15 100 Q 20 30 25 100 M20 100 Q 25 -10 30 100 M25 100 Q 30 10 35 100 M30 100 Q 35 30 40 100 M35 100 Q 40 10 45 100 M40 100 Q 45 50 50 100 M45 100 Q 50 20 55 100 M50 100 Q 55 40 60 100 M55 100 Q 60 60 65 100 M60 100 Q 65 50 70 100 M65 100 Q 70 20 75 100 M70 100 Q 75 45 80 100 M75 100 Q 80 30 85 100 M80 100 Q 85 20 90 100 M85 100 Q 90 50 95 100 M90 100 Q 95 25 100 100 M95 100 Q 100 15 105 100 Z"></path>
+        </svg>
+        <section id="ingles-foot" class="clouds">
+        <p class="text-center">
+          <br/>
+          Copyright © 2015 Área de Diseño Gráfico y Multimedia - FIA, USMP.<br/>Todos los derechos reservados<br/>
+          <br/>
+        </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+<script src="js/jquery.localscroll-1.2.7-min.js" type="text/javascript"></script>
+<script src="js/jquery.scrollTo-1.4.2-min.js" type="text/javascript"></script>
+<!-- NICE Scroll plugin -->
+<script>
+        //scroll bar custom
+          jQuery(document).ready(
+          function() {  
+            jQuery("html").niceScroll({cursorcolor:"#333"});
+          }
+        );
+        </script>
+<div id="ascrail2000" class="nicescroll-rails" style="width: 7px; z-index: auto; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;">
+  <div style="position: relative; top: 419px; float: right; width: 5px; height: 62px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(51, 51, 51); background-clip: padding-box;">
+  </div>
+</div>
+<div id="ascrail2000-hr" class="nicescroll-rails" style="height: 7px; z-index: auto; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;">
+  <div style="position: relative; top: 0px; height: 5px; width: 1280px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(51, 51, 51); background-clip: padding-box;">
+  </div>
+</div>
+<script src="js/modernizr.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script src="js/main.js" type="text/javascript"></script>
+<a href="#0" class="cd-top">Top</a>
+</body>
+</html>

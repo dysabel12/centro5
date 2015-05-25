@@ -1,0 +1,83 @@
+/* main3.css */
+@media (min-width: 768px){
+  #titulo>.col-md-12 {
+    padding-top:3em;
+  }
+}
+@media screen and (max-width: 767px) {
+  #nav-ingles{
+    padding-left:1em;
+    margin-left: 2em;
+    margin-top:1em;
+  }
+  #nav-ingles>.navbar-collapse{
+    padding-left: 0;
+  }
+
+}
+.container-somos {
+  overflow: hidden;
+  width: 100%;
+  margin: 0px;
+}
+#somos{
+  padding:0;
+}
+section p {
+  font-size: 1.3em;
+  line-height: 1.8;
+  text-align: justify;
+  font-weight: 500;
+}
+h2{
+  padding-bottom: 0.5em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  background-color: rgb(66,170,220);
+  width: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: white;
+}
+#parrafo {
+  padding: 1.8em;
+  border-left: 10px solid rgb(66, 170, 220);
+  margin-top: 3em;
+  background-color: white;
+  margin-bottom: 3em;
+}
+#ingles-foot{
+  padding-bottom:0.5em;
+  padding-top:3em;
+}
+section {
+  position: relative;
+  padding: 0em;
+  background: #D6EAFC;
+  color: #fff;
+  text-align: center;
+}
+#autor{
+  width: 100%;
+  padding: 1em;
+  background: aliceblue;
+  border-right: 10px solid rgb(66, 170, 220);
+}
+#clouds{
+  background:rgb(214, 234, 252);
+}
+#img-encabezado{
+  width: 100%;
+}
+#titulo{
+  padding-right: 5em;
+  padding-left: 5em;
+}
+#somos-parrafo{
+  padding-right: 5em;
+  padding-left: 5em;
+}
+#div-img-encabezado{
+    padding: 0;
+}
